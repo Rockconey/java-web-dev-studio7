@@ -1,6 +1,44 @@
 package org.launchcode.studio7;
 
-public class DVD {
+public class DVD extends BaseDisc implements OpticalDisc{
+
+    private static final String discType = "DVD";
+    private int id;
+    private static int nextId = 1;
+    private String name;
+
+    public DVD(){
+        id = nextId;
+        nextId++;
+    }
+
+
+    public DVD(String name) {
+        this();
+        this.name = name;
+
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public void spinDisc() {
+        System.out.println(getContents());
+
+    }
+
+    @Override
+    public String getDiscType() {
+        return discType;
+    }
 
     // TODO: Implement your custom interface.
 
